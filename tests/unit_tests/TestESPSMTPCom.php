@@ -11,7 +11,7 @@ class TestESPSMTPCom extends UnitTestCase
     {
         $dynect = new SmtpCom;
 
-        $this->assertEqual($dynect->getUsername(),Config::$espCredentials['dynect']['username']);
+        $this->assertEqual($dynect->getUsername(),Config::$espCredentials['smtpCom']['username']);
     }
     //--------------------------------------------------------------------------
 
@@ -20,25 +20,24 @@ class TestESPSMTPCom extends UnitTestCase
     {
         $dynect = new SmtpCom;
 
-        $this->assertEqual($dynect->getPassword(),Config::$espCredentials['dynect']['password']);
+        $this->assertEqual($dynect->getPassword(),Config::$espCredentials['smtpCom']['password']);
     }
     //--------------------------------------------------------------------------
 
 
-    public function testSMTPCom_getApiKey()
+    public function testDynect_getApiKey()
     {
-        $dynect = new SmtpCom;
+        $dynect = new Dynect;
 
-        $this->assertEqual($dynect->getApiKey(), Config::$espCredentials['dynect']['apikey']);
+        $this->assertEqual($dynect->getApiKey(), Config::$espCredentials['smtpCom']['apikey']);
     }
     //--------------------------------------------------------------------------
-
 
     public function testSMTPCom_getName()
     {
         $dynect = new SmtpCom;
 
-        $this->assertEqual($dynect->getName(),'Dynect E-Mail Delivery');
+        $this->assertEqual($dynect->getName(),'Smtp.com E-Mail Delivery');
     }
     //--------------------------------------------------------------------------
 
