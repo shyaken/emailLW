@@ -15,7 +15,7 @@ class SmtpCom extends ESP
         parent::__construct();
         $this->host = self::SMTP_HOST;
         $this->port = self::SMTP_PORT;
-        
+                
     }
 
     public function getRestAuthParams()

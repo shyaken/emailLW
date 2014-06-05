@@ -91,7 +91,7 @@ class Config
             'password' => false,
             'apikey'   => '9521fce7c379a791a451d42e384591db'
                            ),
-        'smtpCom'   => array(
+        'smtpcom'   => array(
             'username' => 'leadwrenchtest',
             'password' => 'leadwrenchtest',
             'apikey'   => false
