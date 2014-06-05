@@ -2,6 +2,21 @@
 
 class SmtpCom extends ESP
 {
+    const SMTP_HOST = "smtp.com";
+    const SMTP_PORT = "2525";
+
+
+    protected $host          = null;
+    protected $port          = null;
+    protected $user          = null;
+    protected $password      = null;
+    
+    public function __construct() {
+        parent::__construct();
+        $this->host = self::SMTP_HOST;
+        $this->port = self::SMTP_PORT;
+        
+    }
 
     public function getRestAuthParams()
     {
@@ -21,7 +36,11 @@ class SmtpCom extends ESP
 
     public function getRestUrl()
     {
-        return 'http://emailapi.dynect.net/rest/';
+        return $this->host;
+    }
+    
+    public function getPort() {
+        return $this->port;
     }
     //--------------------------------------------------------------------------
 
