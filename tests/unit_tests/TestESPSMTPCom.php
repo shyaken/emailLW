@@ -11,7 +11,7 @@ class TestESPSMTPCom extends UnitTestCase
     {
         $smtpCom = new SmtpCom;
 
-        $this->assertEqual($smtpCom->getUsername(),Config::$espCredentials['smtpCom']['username']);
+        $this->assertEqual($smtpCom->getUsername(),Config::$espCredentials['smtpcom']['username']);
     }
     //--------------------------------------------------------------------------
 
@@ -20,7 +20,7 @@ class TestESPSMTPCom extends UnitTestCase
     {
         $smtpCom = new SmtpCom;
 
-        $this->assertEqual($smtpCom->getPassword(),Config::$espCredentials['smtpCom']['password']);
+        $this->assertEqual($smtpCom->getPassword(),Config::$espCredentials['smtpcom']['password']);
     }
     //--------------------------------------------------------------------------
 
@@ -29,7 +29,7 @@ class TestESPSMTPCom extends UnitTestCase
     {
         $smtpCom = new Dynect;
 
-        $this->assertEqual($smtpCom->getApiKey(), Config::$espCredentials['smtpCom']['apikey']);
+        $this->assertEqual($smtpCom->getApiKey(), Config::$espCredentials['smtpcom']['apikey']);
     }
     //--------------------------------------------------------------------------
 
@@ -41,7 +41,22 @@ class TestESPSMTPCom extends UnitTestCase
     }
     //--------------------------------------------------------------------------
 
+    public function testSMTPCom_getRestUrl()
+    {
+        $smtpCom = new SmtpCom;
 
+        $this->assertEqual($smtpCom->getRestUrl(),SmtpCom::SMTP_HOST);
+    }
+    //--------------------------------------------------------------------------
+
+    public function testSMTPCom_getPort()
+    {
+        $smtpCom = new SmtpCom;
+
+        $this->assertEqual($smtpCom->getPort(),SmtpCom::SMTP_PORT);
+    }
+    //--------------------------------------------------------------------------
+    
     public function testSMTPCom_sendEmail()
     {
         $api = new SmtpCom;
